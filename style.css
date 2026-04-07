@@ -1,0 +1,84 @@
+html {
+    font-family: "Inter", sans-serif;
+}
+
+body { /*makes background color change when you scroll*/
+    background: linear-gradient(to bottom, #1e1e2f, #592020);
+}
+
+h1 {      
+    display: none;   /*hides h1 bc I didn't like it*/             
+}
+
+h2 {
+    position: sticky;   /*anchors header*/
+    top: 0;
+    z-index: 30; /*kinda like the "bring forward" or "send backwards" in microsoft word -- i needed it bc the table was running through the header at one point. Number is arbitrary.*/
+
+    height: 300px;
+    width: 75%;
+    margin: auto; /* centers header based off of whatever width is left over*/
+
+    display: flex; /*activates flexbox*/
+    align-items: center; /*centers vertically*/
+    justify-content: center; /*centers horizontally*/
+
+    color: white;
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    background-image: url("sandiego2.jpg");
+    background-size: cover; /*stretches image to fit once in the box*/
+    background-position: center; /*necessary bc images automatically populate on the left -- our box would cut off some of the image*/
+
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+
+}
+
+table {
+    table-layout: fixed; /*this is just where mdn suggested i start*/
+    width: 75%;
+    margin: 40px auto; /* 40 top and bottom, centers left and right */
+
+    border-collapse: separate;/*space exists between cells, instead of sharing a border*/
+    border-spacing: 3px; /*space between cells*/
+    
+    border: 1px solid #e5e7eb; /*line and color around cells*/
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px; /* makes rounded corners */
+
+    text-align: center;
+}
+
+/* Table Header */
+thead {
+    background-color: white;
+    font-size: 25px;
+}
+
+thead th:nth-child(1) { width: 35%;} /* Name */
+thead th:nth-child(2) {width: 50%;} /* Description */
+thead th:nth-child(3) {width: 15%;} /* Location */
+
+/* Rows */
+tbody tr:nth-child(odd) {       /*these make every other row a slightly different color*/
+    background-color: #f8f9FC;
+    color: black;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+    color: black;
+}
+
+tbody tr {
+    line-height: 1.5; /*controls vertical space between lines of text*/
+}
+
+/*Cells*/
+th, td {
+    padding: 18px 24px; /*adds space (18px top and bottom, 24px left and right) between borders and text*/
+    vertical-align: middle;
+    text-align: center;
+}
